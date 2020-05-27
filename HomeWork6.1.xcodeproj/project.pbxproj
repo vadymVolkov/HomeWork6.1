@@ -8,22 +8,28 @@
 
 /* Begin PBXBuildFile section */
 		D5C6D72B247E9296000A8952 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C6D72A247E9296000A8952 /* AppDelegate.swift */; };
-		D5C6D72D247E9296000A8952 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C6D72C247E9296000A8952 /* SceneDelegate.swift */; };
 		D5C6D72F247E9296000A8952 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C6D72E247E9296000A8952 /* ViewController.swift */; };
 		D5C6D732247E9296000A8952 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5C6D730247E9296000A8952 /* Main.storyboard */; };
 		D5C6D734247E9298000A8952 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D5C6D733247E9298000A8952 /* Assets.xcassets */; };
 		D5C6D737247E9298000A8952 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5C6D735247E9298000A8952 /* LaunchScreen.storyboard */; };
+		D5C6D744247E92F4000A8952 /* Field.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C6D743247E92F4000A8952 /* Field.swift */; };
+		D5C6D746247E9328000A8952 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C6D745247E9328000A8952 /* Storage.swift */; };
+		D5C6D74B247EA491000A8952 /* TextViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C6D74A247EA491000A8952 /* TextViewCell.swift */; };
+		D5C6D751247EA4D5000A8952 /* DetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C6D750247EA4D5000A8952 /* DetailsController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		D5C6D727247E9296000A8952 /* HomeWork6.1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HomeWork6.1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5C6D72A247E9296000A8952 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D5C6D72C247E9296000A8952 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		D5C6D72E247E9296000A8952 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		D5C6D731247E9296000A8952 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D5C6D733247E9298000A8952 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D5C6D736247E9298000A8952 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D5C6D738247E9298000A8952 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D5C6D743247E92F4000A8952 /* Field.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Field.swift; sourceTree = "<group>"; };
+		D5C6D745247E9328000A8952 /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
+		D5C6D74A247EA491000A8952 /* TextViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewCell.swift; sourceTree = "<group>"; };
+		D5C6D750247EA4D5000A8952 /* DetailsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +62,66 @@
 		D5C6D729247E9296000A8952 /* HomeWork6.1 */ = {
 			isa = PBXGroup;
 			children = (
-				D5C6D72A247E9296000A8952 /* AppDelegate.swift */,
-				D5C6D72C247E9296000A8952 /* SceneDelegate.swift */,
-				D5C6D72E247E9296000A8952 /* ViewController.swift */,
-				D5C6D730247E9296000A8952 /* Main.storyboard */,
-				D5C6D733247E9298000A8952 /* Assets.xcassets */,
-				D5C6D735247E9298000A8952 /* LaunchScreen.storyboard */,
-				D5C6D738247E9298000A8952 /* Info.plist */,
+				D5C6D747247EA452000A8952 /* View */,
+				D5C6D742247E92E3000A8952 /* Models */,
+				D5C6D741247E92D7000A8952 /* Delegates */,
+				D5C6D740247E92D1000A8952 /* Controllers */,
+				D5C6D73E247E92B0000A8952 /* Storyboards */,
+				D5C6D73F247E92BA000A8952 /* etc */,
 			);
 			path = HomeWork6.1;
+			sourceTree = "<group>";
+		};
+		D5C6D73E247E92B0000A8952 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				D5C6D730247E9296000A8952 /* Main.storyboard */,
+				D5C6D735247E9298000A8952 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		D5C6D73F247E92BA000A8952 /* etc */ = {
+			isa = PBXGroup;
+			children = (
+				D5C6D733247E9298000A8952 /* Assets.xcassets */,
+				D5C6D738247E9298000A8952 /* Info.plist */,
+			);
+			path = etc;
+			sourceTree = "<group>";
+		};
+		D5C6D740247E92D1000A8952 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				D5C6D72E247E9296000A8952 /* ViewController.swift */,
+				D5C6D750247EA4D5000A8952 /* DetailsController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		D5C6D741247E92D7000A8952 /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				D5C6D72A247E9296000A8952 /* AppDelegate.swift */,
+			);
+			path = Delegates;
+			sourceTree = "<group>";
+		};
+		D5C6D742247E92E3000A8952 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D5C6D743247E92F4000A8952 /* Field.swift */,
+				D5C6D745247E9328000A8952 /* Storage.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		D5C6D747247EA452000A8952 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D5C6D74A247EA491000A8952 /* TextViewCell.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,8 +196,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				D5C6D72F247E9296000A8952 /* ViewController.swift in Sources */,
+				D5C6D751247EA4D5000A8952 /* DetailsController.swift in Sources */,
+				D5C6D746247E9328000A8952 /* Storage.swift in Sources */,
 				D5C6D72B247E9296000A8952 /* AppDelegate.swift in Sources */,
-				D5C6D72D247E9296000A8952 /* SceneDelegate.swift in Sources */,
+				D5C6D74B247EA491000A8952 /* TextViewCell.swift in Sources */,
+				D5C6D744247E92F4000A8952 /* Field.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,7 +346,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = WDNVRYS434;
-				INFOPLIST_FILE = HomeWork6.1/Info.plist;
+				INFOPLIST_FILE = HomeWork6.1/etc/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -304,7 +364,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = WDNVRYS434;
-				INFOPLIST_FILE = HomeWork6.1/Info.plist;
+				INFOPLIST_FILE = HomeWork6.1/etc/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -8,7 +8,7 @@
 
 
 struct Storage {
-    private static let fieldList = [
+    private static var fieldList = [
         Field(fieldName: "Имя", isSecured: false, rowHight: 44, placeholder: "Name", fieldType: .textField),
         Field(fieldName: "Фамилия", isSecured: false, rowHight: 44, placeholder: "Surname", fieldType: .textField),
         Field(fieldName: "Email", isSecured: false, rowHight: 44, placeholder: "Email", fieldType: .textField),
@@ -24,5 +24,8 @@ struct Storage {
     }
     static func item(at index: Int) -> Field {
         return fieldList[index]
+    }
+    static func setContent(at index: Int, content: String) {
+        fieldList[index].content = content
     }
 }

@@ -9,12 +9,20 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
 
+    
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        
     }
+    
+    
     
     
     @IBAction func sendButtonPressed(_ sender: Any) {
@@ -37,6 +45,25 @@ extension ViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: item.fieldType.rawValue, for: indexPath)
         cell.textLabel?.text = item.fieldName
         cell.tag = indexPath.item
+        for view in cell.contentView.subviews {
+            if let textField = view as? UITextField {
+                let index = indexPath.row
+                textField.text = item.content
+                textField.tag = index
+                textField.delegate = self
+                textField.isSecureTextEntry = item.isSecured
+                textField.placeholder = item.placeholder
+                
+            }
+            if let textView = view as? UITextView {
+                let index = indexPath.row
+                textView.text = item.content
+                textView.tag = index
+                textView.delegate = self
+                
+            }
+            
+        }
         return cell
     }
     
@@ -47,4 +74,44 @@ extension ViewController: UITableViewDelegate {
         let item = Storage.item(at: indexPath.item)
         return item.rowHight
     }
+}
+
+
+extension ViewController: UITextFieldDelegate {
+    func textField(_ textField: UITextField,
+                   shouldChangeCharactersIn range: NSRange,
+                   replacementString string: String) -> Bool {
+        
+        let prevString = textField.text!
+        let swiftRange = Range(range, in: prevString)!
+        
+        let newString = prevString.replacingCharacters(in: swiftRange, with: string)
+        
+        let index = textField.tag
+        
+        
+        
+        Storage.setContent(at: index, content: newString)
+        
+        
+        
+        return true
+    }
+}
+
+extension ViewController: UITextViewDelegate {
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        let prevString = textView.text!
+        let swiftRange = Range(range, in: prevString)!
+        
+        let newString = prevString.replacingCharacters(in: swiftRange, with: text)
+        
+        let index = textView.tag
+        
+        Storage.setContent(at: index, content: newString)
+        
+        
+        return true
+    }
+ 
 }

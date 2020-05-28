@@ -13,6 +13,7 @@ struct Field {
     let isSecured: Bool
     let rowHight: CGFloat
     let placeholder: String
+    var content: String = ""
     enum FieldType: String {
        case textField = "Text Field"
        case textView = "Text View"

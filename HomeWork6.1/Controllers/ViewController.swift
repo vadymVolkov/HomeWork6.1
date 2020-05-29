@@ -11,6 +11,12 @@ import UIKit
 class ViewController: UIViewController {
     
 
+
+    @IBOutlet weak var textViewBottomOffset: NSLayoutConstraint!
+    
+    let keyboardBottomOffset: CGFloat = 20
+    
+    //var currentTextField: UITextView?
     
     
     
@@ -18,7 +24,24 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(keyboardWillShow(_:)),
+                                               name: UIResponder.keyboardWillShowNotification,
+                                               object: nil)
         
+        
+        
+    }
+    @objc func keyboardWillShow(_ notification: Notification) {
+        if let userInfo = notification.userInfo {
+            if let keyboardFrame = userInfo["UIKeyboardFrameEndUserInfoKey"] as? CGRect, let duration = userInfo["UIKeyboardAnimationDurationUserInfoKey"] as? TimeInterval {
+                textViewBottomOffset.constant = keyboardBottomOffset + keyboardFrame.height
+                UIView.animate(withDuration: duration) {
+                    self.view.setNeedsLayout()
+                    self.view.layoutIfNeeded()
+                }
+            }
+        }
         
     }
     
@@ -28,11 +51,11 @@ class ViewController: UIViewController {
     @IBAction func sendButtonPressed(_ sender: Any) {
         let vc = self.storyboard!.instantiateViewController(identifier: "Details Controller") as DetailsController
         navigationController?.pushViewController(vc, animated: true)
-
+        
     }
     
     
-
+    
 }
 
 extension ViewController: UITableViewDataSource {
@@ -113,5 +136,7 @@ extension ViewController: UITextViewDelegate {
         
         return true
     }
+    
  
+    
 }

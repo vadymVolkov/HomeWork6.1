@@ -19,6 +19,7 @@ struct Field {
        case textView = "Text View"
        case label = "Label"
        case button = "Button"
+        
     }
     let fieldType: FieldType
 }

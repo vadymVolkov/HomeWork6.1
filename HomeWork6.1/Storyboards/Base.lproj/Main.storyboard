@@ -16,7 +16,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Dk7-E3-Jfr">
-                                <rect key="frame" x="10" y="188" width="394" height="698"/>
+                                <rect key="frame" x="10" y="0.0" width="394" height="876"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Text Field" id="HBU-P4-qKA">
@@ -108,14 +108,15 @@
                         <constraints>
                             <constraint firstItem="Dk7-E3-Jfr" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="7Mb-IT-kb3"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Dk7-E3-Jfr" secondAttribute="trailing" constant="10" id="Noi-m9-cVH"/>
-                            <constraint firstItem="Dk7-E3-Jfr" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="sIq-Vf-GZc"/>
-                            <constraint firstAttribute="bottom" secondItem="Dk7-E3-Jfr" secondAttribute="bottom" constant="10" id="th4-Qg-pA5"/>
+                            <constraint firstItem="Dk7-E3-Jfr" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="sIq-Vf-GZc"/>
+                            <constraint firstAttribute="bottom" secondItem="Dk7-E3-Jfr" secondAttribute="bottom" constant="20" id="th4-Qg-pA5"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="i0u-pc-1Pn"/>
                     <connections>
-                        <outlet property="textViewBottomOffset" destination="th4-Qg-pA5" id="ogt-ys-Dj0"/>
+                        <outlet property="tableView" destination="Dk7-E3-Jfr" id="Rhb-Oa-SMg"/>
+                        <outlet property="tableViewOffset" destination="th4-Qg-pA5" id="KNv-zk-gjP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

@@ -11,8 +11,9 @@ import UIKit
 class ViewController: UIViewController {
     
 
-
-    @IBOutlet weak var textViewBottomOffset: NSLayoutConstraint!
+    @IBOutlet weak var tableView: UITableView!
+    
+    @IBOutlet weak var tableViewOffset: NSLayoutConstraint!
     
     let keyboardBottomOffset: CGFloat = 20
     
@@ -35,7 +36,7 @@ class ViewController: UIViewController {
     @objc func keyboardWillShow(_ notification: Notification) {
         if let userInfo = notification.userInfo {
             if let keyboardFrame = userInfo["UIKeyboardFrameEndUserInfoKey"] as? CGRect, let duration = userInfo["UIKeyboardAnimationDurationUserInfoKey"] as? TimeInterval {
-                textViewBottomOffset.constant = keyboardBottomOffset + keyboardFrame.height
+                tableViewOffset.constant = keyboardBottomOffset + keyboardFrame.height
                 UIView.animate(withDuration: duration) {
                     self.view.setNeedsLayout()
                     self.view.layoutIfNeeded()
@@ -128,15 +129,18 @@ extension ViewController: UITextViewDelegate {
         let swiftRange = Range(range, in: prevString)!
         
         let newString = prevString.replacingCharacters(in: swiftRange, with: text)
-        
         let index = textView.tag
-        
         Storage.setContent(at: index, content: newString)
         
         
         return true
     }
     
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        let index = textView.tag
+        let indexPath = IndexPath(row: index, section: 0)
+        tableView.scrollToRow(at: indexPath, at: .middle, animated: true)
+    }
  
     
 }
